@@ -1,9 +1,19 @@
 pipeline {
   agent any
   stages {
-    stage('Initialize') {
+    stage('build') {
       steps {
-        echo 'this is minimum pipeline step'
+        sh 'ping -c 2 localhost'
+      }
+    }
+    stage('test') {
+      steps {
+        sh 'ping -c 3 localhost'
+      }
+    }
+    stage('deploy') {
+      steps {
+        sh 'ping -c 4 test'
       }
     }
   }
