@@ -13,7 +13,7 @@ pipeline {
     }
     stage('deploy') {
       steps {
-        sh 'ping -c 4 test'
+        sh 'ping -c 4 localhost'
       }
     }
   }
